@@ -3,9 +3,10 @@ from django.shortcuts import render
 from django.views import View
 
 
-class IndexView(View):
+class Index(View):
 
-    def get(self, request, **kwargs):
+    def get(self, request, tags='python', article_id=42):
         return render(request, 'articles/index.html', context={
-            'app_name': 'hexlet_django_blog.articles'
+            'tags': tags,
+            'article_id': article_id,
         })
